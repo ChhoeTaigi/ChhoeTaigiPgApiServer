@@ -14,6 +14,7 @@ RUN npm -v
 RUN npm install pm2@latest -g
 
 # Start webapp
-RUN pm2 start index.js --watch --ignore-watch="node_modules"
+RUN cd ~
+RUN pm2 start ./index.js --watch --ignore-watch="node_modules"
 RUN pm2 startup
 RUN pm2 save
