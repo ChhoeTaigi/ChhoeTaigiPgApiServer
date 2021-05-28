@@ -5,7 +5,7 @@ RUN apt-get update
 RUN apt-get install -y build-essential curl
 
 # Install Node.js v16.x
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | -E bash -
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt-get install -y nodejs
 RUN nodejs -v
 RUN npm -v
