@@ -1,7 +1,8 @@
 FROM ubuntu:18.04
 
 # Basic
-RUN apt install build-essential
+RUN apt-get update
+RUN apt-get install build-essential
 
 # Install Node.js v16.x
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
