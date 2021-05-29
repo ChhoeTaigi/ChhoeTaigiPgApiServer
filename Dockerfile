@@ -17,8 +17,13 @@ RUN npm install pm2@latest -g
 
 # Clone
 RUN git clone https://github.com/ChhoeTaigi/ChhoeTaigiPgApiServer
+WORKDIR /ChhoeTaigiPgApiServer
+
+# Install npm libs
+RUN npm i
 
 # Start webapp
-RUN pm2 start ./ChhoeTaigiPgApiServer/index.js --watch --ignore-watch="node_modules"
+RUN pm2 start ./index.js --watch --ignore-watch="node_modules"
 RUN pm2 startup
 RUN pm2 save
+EXPOSE 3001
